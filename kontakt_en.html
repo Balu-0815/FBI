@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | FBI GmbH</title>
+  <meta name="description" content="Contact FBI GmbH: Personal advice, quotes and service for tools, machines and systems for sheet metal processing.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.fbi-gmbh.com/kontakt_en.html">
+  <link rel="icon" href="img/logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header fade-in">
+    <div class="header-left">
+      <a href="index_en.html" class="logo-link">
+        <div class="logo-container">
+          <img src="img/logo.png" alt="FBI GmbH Logo" class="logo-img" loading="lazy">
+        </div>
+      </a>
+    </div>
+    <nav class="nav">
+      <ul>
+        <li><a href="index_en.html">Home</a></li>
+        <li><a href="firmenportraet_en.html">Company Profile</a></li>
+        <li><a href="leistungen_en.html">Our Services</a></li>
+        <li><a href="kontakt_en.html" class="active">Contact</a></li>
+        <li>
+          <div class="lang-switch lang-switch-mobile">
+            <a href="kontakt.html">DE</a>
+            <a href="kontakt_en.html" class="active">EN</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <button class="hamburger" id="hamburger-btn" aria-label="Open navigation" tabindex="0">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <div class="header-right">
+      <div class="lang-switch lang-switch-desktop">
+        <a href="kontakt.html">DE</a> | <a href="kontakt_en.html" class="active">EN</a>
+      </div>
+      <a href="kontakt_en.html" class="btn-header">Request a Quote</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="section-content fade-in">
+      <div class="kontakt-layout">
+        <div class="kontakt-text-column slide-in-left">
+          <h1>Contact</h1>
+          <p>
+            Do you have questions, need a quote, or want personal advice?<br>
+            Simply send us an email or give us a call. We look forward to your inquiry!
+          </p>
+          <ul class="kontakt-details-liste">
+            <li><strong>Email:</strong><span><a href="mailto:info@fbi-gmbh.com">info@fbi-gmbh.com</a></span></li>
+            <li><strong>Phone:</strong><span><a href="tel:+497033390133">+49 (0)7033 / 390133</a></span></li>
+            <li><strong>Fax:</strong><span>+49 (0)7033 / 390134</span></li>
+            <li><strong>Website:</strong><span><a href="https://www.fbi-gmbh.com" target="_blank">www.fbi-gmbh.com</a></span></li>
+            <li><strong>Address:</strong><span>Mühlrain 8, 71296 Heimsheim, Germany</span></li>
+          </ul>
+          <h2>Our Location:</h2>
+          <div class="map-container" id="map-wrapper">
+            <div class="map-preview-wrapper">
+              <img src="img/maps-vorschau.jpg" alt="FBI GmbH Location on Map" class="map-preview" loading="lazy">
+              <button type="button" class="map-logo-btn" id="showMapBtn" aria-label="Show Google Maps">
+                <img src="img/logo.png" alt="FBI GmbH Logo" class="logo-on-map">
+              </button>
+            </div>
+            <p class="map-hinweis">When you load the map, data is transmitted to Google.</p>
+          </div>
+        </div>
+        <div class="kontakt-image-column slide-in-right">
+          <img src="img/Team.png" alt="Contact Team FBI GmbH" class="kontakt-image" loading="lazy">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer fade-in">
+    <p>
+      © 2025 <span style="color: #2b875b;">FBI Bergmann Industrievertretungen</span>   |  
+      <a href="Legal.html" class="footer-link">Legal</a>   |  
+      <a href="Privacy.html" class="footer-link">Privacy</a>
+    </p>
+  </footer>
+
+  <script>
+    function setupScrollAnimations() {
+      const animatedElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right');
+      if (!animatedElements.length) return;
+      const observer = new IntersectionObserver((entries, observerInstance) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observerInstance.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      animatedElements.forEach(el => { observer.observe(el); });
+    }
+    document.addEventListener('DOMContentLoaded', () => { setupScrollAnimations(); });
+    
+    function setupHamburgerMenu() {
+      const hamburger = document.getElementById('hamburger-btn');
+      const navMenu = document.querySelector('.nav ul');
+      if (hamburger && navMenu) {
+        hamburger.addEventListener('click', function() {
+          navMenu.classList.toggle('open');
+        });
+        navMenu.querySelectorAll('a').forEach(link =>
+          link.addEventListener('click', () => navMenu.classList.remove('open'))
+        );
+      }
+    }
+    document.addEventListener('DOMContentLoaded', setupHamburgerMenu);
+    
+    function setupLazyMap() {
+      const btn = document.getElementById('showMapBtn');
+      const mapWrapper = document.getElementById('map-wrapper');
+      if (btn && mapWrapper) {
+        btn.addEventListener('click', function() {
+          mapWrapper.innerHTML = `
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.965258607152!2d8.843606976932498!3d48.85901330005553!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47971bca4937a3c7%3A0x6b633f8e58a28e5c!2sM%C3%BChlrain%208%2C%2071296%20Heimsheim!5e0!3m2!1sde!2sde!4v1719131669502!5m2!1sde!2sde"
+              width="100%" height="350" style="border:0; border-radius:16px;"
+              allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          `;
+        });
+      }
+    }
+    document.addEventListener('DOMContentLoaded', setupLazyMap);
+  </script>
+</body>
+</html>

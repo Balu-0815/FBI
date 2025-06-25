@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rechtliche Hinweise | FBI GmbH</title>
+  <meta name="description" content="Rechtliche Hinweise der FBI GmbH – Impressum, Haftungsausschluss, Urheberrecht und weitere rechtliche Informationen.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.fbi-gmbh.com/Rechtliches.html">
+  <link rel="icon" href="img/logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header fade-in">
+    <div class="header-left">
+      <a href="index.html" class="logo-link">
+        <div class="logo-container">
+          <img src="img/logo.png" alt="FBI GmbH Logo" class="logo-img" loading="lazy">
+        </div>
+      </a>
+    </div>
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="firmenportraet.html">Firmenporträt</a></li>
+        <li><a href="leistungen.html">Unsere Leistungen</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+        <li>
+          <div class="lang-switch lang-switch-mobile">
+            <a href="Rechtliches.html" class="active">DE</a>
+            <a href="Legal.html">EN</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <button class="hamburger" id="hamburger-btn" aria-label="Navigation öffnen" tabindex="0">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <div class="header-right">
+      <div class="lang-switch lang-switch-desktop">
+        <a href="Rechtliches.html" class="active">DE</a> | <a href="Legal.html">EN</a>
+      </div>
+      <a href="kontakt.html" class="btn-header">Angebot anfordern</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="section-content fade-in">
+      <h1>Impressum</h1>
+      <p><strong>FBI Bergmann Industrievertretungen</strong><br>
+      Mühlrain 8<br>
+      71296 Heimsheim<br>
+      Deutschland</p>
+
+      <p><strong>Telefon:</strong> +49 (0)7033 / 390133<br>
+      <strong>Telefax:</strong> +49 (0)7033 / 390134<br>
+      <strong>E-Mail:</strong> <a href="mailto:info@fbi-gmbh.com">info@fbi-gmbh.com</a></p>
+
+      <p><strong>Vertreten durch:</strong> Frank Bergmann</p>
+
+     <p><strong>Umsatzsteuer-ID:</strong> DE165348033<br>
+      
+      <h2>Haftungsausschluss</h2>
+      <p>Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.</p>
+
+      <h2>Haftung für Links</h2>
+      <p>Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.</p>
+
+      <h2>Urheberrecht</h2>
+      <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.</p>
+    </section>
+  </main>
+
+  <footer class="footer fade-in">
+    <p>
+      &copy; 2025 <span style="color: #2b875b;">FBI Bergmann Industrievertretungen</span> &nbsp; | &nbsp;
+      <a href="Rechtliches.html" class="footer-link">Rechtliches</a> &nbsp; | &nbsp;
+      <a href="Datenschutz.html" class="footer-link">Datenschutz</a>
+    </p>
+  </footer>
+
+  <script>
+    function setupScrollAnimations() {
+      const animatedElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right');
+      if (!animatedElements.length) return;
+      const observer = new IntersectionObserver((entries, observerInstance) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observerInstance.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      animatedElements.forEach(el => { observer.observe(el); });
+    }
+    document.addEventListener('DOMContentLoaded', () => { setupScrollAnimations(); });
+
+    function setupHamburgerMenu() {
+      const hamburger = document.getElementById('hamburger-btn');
+      const navMenu = document.querySelector('.nav ul');
+      if (hamburger && navMenu) {
+        hamburger.addEventListener('click', function() {
+          navMenu.classList.toggle('open');
+        });
+        navMenu.querySelectorAll('a').forEach(link =>
+          link.addEventListener('click', () => navMenu.classList.remove('open'))
+        );
+      }
+    }
+    document.addEventListener('DOMContentLoaded', setupHamburgerMenu);
+  </script>
+</body>
+</html>

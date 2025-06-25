@@ -1,0 +1,739 @@
+/* --- Grundlayout & Farben --- */
+body {
+  background:
+    linear-gradient(90deg, rgba(255,255,255,0.94) 58%, rgba(220,240,220,0.79) 100%),
+    url('img/header_example.jpg') no-repeat right center / cover;
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Open Sans', Arial, sans-serif;
+  color: #1a3227;
+  overflow-x: hidden;
+}
+
+/* --- Überschriften einheitlich --- */
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+}
+h1 {
+  font-size: 2.7rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  margin-top: 0; 
+  line-height: 1.14;
+}
+h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 28px;
+  margin-bottom: 12px;
+}
+
+/* --- HEADER --- */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 36px 10px 25px;
+  min-height: 130px;
+  position: relative;
+  z-index: 2;
+}
+.header-left {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  margin-right: 32px;
+  transition: none;
+}
+.header-left:hover {
+  transform: none;
+  background-color: transparent;
+}
+.logo-link {
+  text-decoration: none;
+  display: block;
+}
+.logo-img {
+  height: 133px;
+  max-width: 308px;
+  display: block;
+  margin: auto;
+  object-fit: contain;
+  filter: none;
+  transition: transform 0.3s;
+}
+.logo-link:hover .logo-img {
+  transform: scale(1.07);
+}
+
+/* --- NAVIGATION --- */
+.nav ul {
+  display: flex;
+  gap: 54px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: 110;
+}
+.nav a {
+  font-family: 'Montserrat', sans-serif;
+  text-decoration: none;
+  color: #24563a;
+  font-weight: 600;
+  font-size: 1.55rem;
+  padding: 10px 15px;
+  border-bottom: 2.5px solid transparent;
+  border-radius: 8px;
+  transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+  letter-spacing: 0.01em;
+}
+.nav a:hover {
+  color: #145b35;
+  background-color: #e0f0e9;
+  border-bottom-color: transparent;
+}
+.nav a.active {
+  color: #2b875b;
+  border-bottom-color: #2b875b;
+  background-color: transparent;
+}
+
+/* --- Header Right: Sprachen/Angebot --- */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.lang-switch {
+  font-size: 1.3rem;
+  color: #2b875b;
+  background: #eaf6ee;
+  border-radius: 9px;
+  padding: 7px 20px 7px 14px;
+  box-shadow: 0 1px 2px #b5c7bc24;
+  font-weight: 700;
+  display: flex;
+  gap: 9px;
+  align-items: center;
+}
+.lang-switch a {
+  color: #145b35;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 0 6px;
+  border-radius: 4px;
+  transition: background 0.14s;
+  font-size: 1.18rem;
+}
+.lang-switch a.active,
+.lang-switch a:hover {
+  background: #b7e9cc;
+  color: #0e3923;
+}
+
+/* --- Angebot anfordern Button --- */
+.btn-header {
+  font-family: 'Montserrat', sans-serif;
+  background: #2b875b;
+  color: #fff;
+  padding: 16px 36px;
+  border-radius: 11px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1.25rem;
+  box-shadow: 0 2px 6px #b5c7bc2a;
+  border: none;
+  cursor: pointer;
+  margin-left: 16px;
+  transition: background 0.18s, transform 0.18s, box-shadow 0.18s;
+}
+.btn-header:hover {
+  background: #17573b;
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* --- ZENTRALE LAYOUT-DEFINITION FÜR CONTENT-BLÖCKE --- */
+.section-content,
+.startbild-container {
+    max-width: 1200px;
+    margin: 40px auto 0 auto;
+    box-sizing: border-box;
+}
+
+/* Styling für die weißen Boxen */
+.section-content {
+  background: rgba(255,255,255,0.37);
+  border-radius: 28px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.04),
+              0 6px 12px rgba(0,0,0,0.04),
+              0 15px 25px rgba(0,0,0,0.04);
+  padding: 52px 48px;
+  position: relative;
+}
+.highlight {
+  color: #2b875b;
+  background: linear-gradient(90deg, #e3fae3 70%, transparent 100%);
+  border-radius: 6px;
+  padding: 0 7px;
+}
+.section-content p {
+  font-size: 1.22rem;
+  color: #46605c;
+  margin-bottom: 30px;
+  margin-top: 0;
+  line-height: 1.6;
+}
+
+/* --- Hauptbutton für Aktionen --- */
+.btn-main {
+  font-family: 'Montserrat', sans-serif;
+  background: #2b875b;
+  color: #fff;
+  padding: 17px 40px;
+  border-radius: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1.22rem;
+  box-shadow: 0 2px 6px #b5c7bc2a;
+  border: none;
+  cursor: pointer;
+  margin-top: 18px;
+  display: inline-block;
+  transition: background 0.18s, transform 0.18s, box-shadow 0.18s;
+}
+.btn-main:hover {
+  background: #17573b;
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* --- Features & Cards für Index (Kernkompetenzen) --- */
+.features.section-content {
+  background: rgba(255,255,255,0.37);
+  border-radius: 28px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.04), 0 6px 12px rgba(0,0,0,0.04), 0 15px 25px rgba(0,0,0,0.04);
+  padding: 52px 48px;
+}
+.features.section-content h2 {
+  text-align: left;
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+}
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+.feature-card {
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(43, 135, 91, 0.2);
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #2b875b, transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(43, 135, 91, 0.15);
+  border-color: rgba(43, 135, 91, 0.4);
+}
+.feature-card:hover::before {
+  opacity: 1;
+}
+.feature-icon {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, #2b875b, #1e6040);
+  color: #fff;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-size: 2rem;
+  transition: transform 0.3s;
+}
+.feature-card:hover .feature-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+.feature-card h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  margin-top: 0;
+  color: #1a3227;
+}
+.feature-card p {
+  color: #46605c;
+  line-height: 1.6;
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+/* --- Bild-Container am Ende der Homepage --- */
+.startbild-container .startbild-img {
+  width: 100%;
+  display: block;
+  border-radius: 28px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.07);
+}
+
+/* --- Bildunterschriften & Listen (generisch) --- */
+.caption {
+  font-size: 1.06rem;
+  color: #386b52;
+  margin-top: 6px;
+  text-align: center;
+  opacity: 0.92;
+}
+.section-content ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 25px;
+  margin-bottom: 18px;
+}
+.section-content ul:not(.kontakt-details-liste) li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  top: 1px;
+  color: #2b875b;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+.section-content ul li {
+  padding-left: 28px;
+  position: relative;
+  margin-bottom: 12px;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* --- Firmenporträt- und Team-Styles --- */
+.firmenportraet-layout {
+  display: flex;
+  gap: 48px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.text-column {
+  flex: 2;
+  min-width: 320px;
+}
+.image-column {
+  flex: 1;
+  min-width: 300px;
+}
+.image-column .team-member-intro {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 0;
+  background-color: transparent;
+  box-shadow: none;
+  padding: 0;
+  width: 100%;
+}
+.image-column .team-member-photo {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 0;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+.image-column .team-member-info {
+  font-size: 1.1rem;
+}
+.image-column .team-member-info strong {
+  font-size: 1.75rem;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 5px;
+}
+.section-content > h1 {
+  margin-bottom: 25px;
+  margin-top: 0; 
+}
+.section-content > h2 {
+  margin-top: 0;
+  font-size: 1.8rem;
+  color: #24563a;
+  margin-bottom: 20px;
+}
+.section-content > h3 {
+  margin-top: 30px;
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+  color: #1e6040;
+}
+
+/* --- Kontaktseite Styles --- */
+.kontakt-layout {
+  display: flex;
+  gap: 44px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.kontakt-text-column {
+  flex: 1 1 500px;
+  min-width: 300px;
+}
+.kontakt-image-column {
+  flex: 1 1 320px;
+  min-width: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+.kontakt-image {
+  max-width: 100%;
+  width: 320px;
+  height: auto;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(70, 96, 92, 0.15);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.kontakt-image:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 30px rgba(70, 96, 92, 0.2);
+}
+.kontakt-details-liste {
+  list-style: none;
+  padding-left: 0;
+  margin: 20px 0 30px 0;
+}
+.kontakt-details-liste li {
+  display: flex;
+  align-items: baseline;
+  padding-left: 0;
+  position: relative;
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+  color: #46605c;
+  border-bottom: 1px dashed rgba(43, 135, 91, 0.2);
+}
+.kontakt-details-liste li::before {
+  content: "";
+}
+.kontakt-details-liste li:last-child {
+  border-bottom: none;
+}
+.kontakt-details-liste li strong {
+  flex-shrink: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  color: #1e6040;
+  min-width: 90px;
+  display: inline-block;
+  margin-right: 10px;
+}
+.kontakt-details-liste li a {
+  color: #2b875b;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.kontakt-details-liste li a:hover {
+  color: #1e6040;
+  text-decoration: underline;
+}
+.kontakt-text-column h2 {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-size: 1.6rem;
+}
+
+/* --- Footer --- */
+.footer {
+  margin-top: 60px;
+  text-align: center;
+  background: #f3faef;
+  color: #2b875b;
+  font-size: 1.11rem;
+  padding: 24px 0 16px 0;
+  border-radius: 18px 18px 0 0;
+}
+.footer p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px 15px;
+  padding: 0 15px;
+}
+
+/* --- Animationsklassen --- */
+.fade-in,
+.slide-in-left,
+.slide-in-right {
+  opacity: 0;
+  transition: opacity 0.8s, transform 0.8s;
+}
+.fade-in {
+  transform: translateY(30px);
+}
+.slide-in-left {
+  transform: translateX(-50px);
+}
+.slide-in-right {
+  transform: translateX(50px);
+}
+.fade-in.visible,
+.slide-in-left.visible,
+.slide-in-right.visible {
+  opacity: 1;
+  transform: translateY(0) translateX(0);
+}
+
+/* --- Mobile Navigation (Hamburger) --- */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 46px;
+  height: 46px;
+  cursor: pointer;
+  border: none;
+  background: none;
+  z-index: 101;
+  margin-left: 16px;
+  outline: none;
+}
+.hamburger span {
+  width: 32px;
+  height: 4px;
+  background: #2b875b;
+  margin: 4px 0;
+  border-radius: 3px;
+  transition: 0.3s;
+}
+
+/* --- NEU: Sprachwahl im mobilen Menü standardmäßig ausblenden --- */
+.lang-switch-mobile {
+  display: none;
+}
+
+/* --- Responsiv --- */
+@media (max-width: 1100px) {
+  .header { padding: 10px 25px; min-height: auto; }
+  .header-left { min-width: auto; margin-right: 20px; }
+  .logo-img { height: 90px; max-width: 250px; }
+  .nav a { font-size: 1.13rem; padding: 8px 10px; }
+  .nav ul { gap: 25px; }
+  .section-content, .startbild-container { padding-left: 25px; padding-right: 25px; }
+  .features.section-content { padding: 52px 25px; }
+  .features.section-content h2 { font-size: 2.2rem; margin-bottom: 2rem; }
+  .features-grid { gap: 1.5rem; }
+  .feature-card { padding: 1.5rem; }
+  h1 { font-size: 2rem; }
+  .firmenportraet-layout { gap: 30px; }
+  .kontakt-layout { gap: 30px; }
+}
+@media (max-width: 900px) {
+  .nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 95px;
+    right: 32px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px #24563a18;
+    padding: 20px 25px 10px 25px;
+    z-index: 1000;
+    min-width: 210px;
+    width: fit-content;
+    align-items: flex-end;
+  }
+  .nav ul.open {
+    display: flex;
+  }
+  .hamburger {
+    display: flex;
+  }
+
+  /* NEU: Desktop-Sprachwahl ausblenden und mobile stylen */
+  .lang-switch-desktop {
+    display: none;
+  }
+  .lang-switch-mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #e0e0e0;
+    background: none;
+    box-shadow: none;
+  }
+  .lang-switch-mobile a {
+    font-size: 1.1rem;
+    padding: 5px 10px;
+    border-bottom: none;
+  }
+}
+@media (max-width: 700px) {
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    min-height: auto;
+  }
+  .header-left {
+    margin: 0;
+  }
+  .logo-img {
+    height: 70px;
+  }
+  .nav ul {
+    right: 20px;
+    top: 85px;
+  }
+  .nav a {
+    font-size: 1.1rem;
+    display: block;
+    text-align: center;
+    padding: 12px 10px;
+    width: auto;
+  }
+  
+  .header-right .btn-header {
+    display: none;
+  }
+  
+  .section-content, .startbild-container { padding-left: 5vw; padding-right: 5vw; }
+  
+  .leistungen-produkt-grid {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .leistungen-produkt-card {
+    padding: 25px 20px;
+    gap: 15px;
+  }
+  .lp-icon {
+    min-width: 50px;
+  }
+
+  .features.section-content { padding: 52px 5vw; }
+  .features.section-content h2 { font-size: 1.8rem; margin-bottom: 1.5rem; }
+  .feature-card { padding: 1.5rem 1rem; }
+  .feature-card h3 { font-size: 1.3rem; }
+  .feature-card p { font-size: 0.95rem; }
+  
+  h1 { font-size: 1.8rem; }
+  .section-content p { font-size: 1.1rem; }
+  
+  .firmenportraet-layout { flex-direction: column; }
+  .text-column {
+    word-break: break-word;
+  }
+  .image-column { margin-top: 40px; }
+  .kontakt-text-column { order: 1; }
+  .kontakt-image-column { order: 2; margin-top: 20px; }
+  .kontakt-image { width: 100%; max-width: 280px; margin: 10px auto; }
+
+  .footer p {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .map-preview-wrapper { width: 100%; max-width: 98vw; }
+  .logo-on-map { width: 105px; }
+  .map-logo-btn { padding: 7px 14px; border-radius: 16px; }
+}
+
+/* --- Map --- */
+.map-container { margin: 32px 0 12px 0; text-align: center; position: relative; }
+.map-preview-wrapper { display: inline-block; position: relative; width: 85%; max-width: 550px; }
+.map-preview { width: 100%; border-radius: 16px; box-shadow: 0 6px 18px #0001; border: 1px solid #c2e3ce; transition: width 0.2s; }
+.map-logo-btn { background: rgba(255,255,255,0.65); border: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 12px 28px; border-radius: 30px; box-shadow: 0 2px 12px #0002; cursor: pointer; transition: background 0.15s, box-shadow 0.15s, transform 0.2s; z-index: 2; animation: pulse 2s infinite; display: flex; align-items: center; justify-content: center; border: 2px solid #38875b; }
+.map-logo-btn:hover { background: #e7f8f0; box-shadow: 0 4px 20px #0003, 0 0 0 12px #c2e3ce88; transform: translate(-50%, -53%) scale(1.08); }
+.logo-on-map { width: 180px; height: auto; object-fit: contain; display: block; transition: width 0.2s, height 0.2s; }
+.map-hinweis { font-size: 0.98rem; color: #38875b; opacity: 0.75; margin-top: 6px; }
+@keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(56,135,91, 0.15); } 70% { box-shadow: 0 0 0 16px rgba(56,135,91, 0); } 100% { box-shadow: 0 0 0 0 rgba(56,135,91, 0); } }
+
+/* --- Leistungen Seite --- */
+.leistungen-produkt-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  width: 100%;
+  max-width: 970px;
+  margin: 40px auto;
+  padding: 0 18px;
+}
+.leistungen-produkt-card {
+  display: flex;
+  align-items: flex-start;
+  background: rgba(255,255,255,0.85);
+  border: 2.5px solid #bde8c5;
+  border-radius: 24px;
+  box-shadow: 0 4px 24px #2b875b0e;
+  padding: 35px 30px;
+  gap: 25px;
+  transition: box-shadow 0.25s, border-color 0.23s, transform 0.23s;
+}
+.leistungen-produkt-card:hover {
+  box-shadow: 0 14px 38px #2b875b26;
+  border-color: #2b875b;
+  transform: translateY(-4px) scale(1.017);
+}
+.lp-icon {
+  min-width: 64px;
+  min-height: 64px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #e3fae3 60%, #d3ebe4 100%);
+  box-shadow: 0 2px 8px #0001;
+}
+.lp-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.18rem;
+  font-weight: 700;
+  margin: 0 0 6px 0;
+  color: #218055;
+}
+.lp-desc {
+  color: #46605c;
+  font-size: 1.07rem;
+  margin: 0;
+  line-height: 1.55;
+}
+.services-intro {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #46605c;
+  margin-bottom: 0;
+  line-height: 1.6;
+}
